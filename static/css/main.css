@@ -94,3 +94,9 @@ span.hours {
     border-radius: 99px;
     color: #fff;
 }
+
+@media only screen and (max-width: 600px) {
+    .container {
+        max-width: 80%;
+    }
+}
