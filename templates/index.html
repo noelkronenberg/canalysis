@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <title>Canalysis</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Canalysis</h1>
+
+        <form method="post" enctype="multipart/form-data">
+
+            <label for="ical_file" class="file-input" id="fileInputLabel">
+                <span>Upload a file</span>
+                <input type="file" name="ical_file" id="ical_file" accept=".ics" style="display: none;" onchange="displayFileName(this)">
+            </label>
+
+            <label for="titles" class="text-input">Enter titles to track (separate with commas):</label>
+            <input type="text" name="titles" required>
+
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+
+    <script>
+        function displayFileName(input) {
+            const label = document.getElementById('fileInputLabel').querySelector('span');
+            if (input.files.length > 0) {
+                label.textContent = input.files[0].name;
+            } else {
+                label.textContent = 'Upload a file';
+            }
+        }
+    </script>
+
+</body>
+</html>
