@@ -9,8 +9,8 @@
     <body>
         <div class="container">
         <h1>Results</h1>
-        {% for title, total_hours in total_hours_by_title.items() %}
-            <p><span class="title">{{ title }}</span> <span class="hours">{{ total_hours }} hours</span></p>
+        {% for title, hours in data.items() %}
+            <p><span class="title">{{ title }}</span> <span class="hours">{{ hours }} hours</span></p>
         {% endfor %}
         </div>
     </body>

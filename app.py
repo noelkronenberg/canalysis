@@ -3,8 +3,8 @@ from icalendar import Calendar
 
 app = Flask(__name__)
 
-def calculate_total_hours(ical_data, titles_to_track):
-    total_hours_by_title = {title: 0 for title in titles_to_track} # placeholder dictionary
+def calculate_hours(ical_data, titles):
+    total_hours = {title: 0 for title in titles} # placeholder dictionary
 
     cal = Calendar.from_ical(ical_data)
 
@@ -13,28 +13,39 @@ def calculate_total_hours(ical_data, titles_to_track):
         summary = event.get('SUMMARY')
 
         # iterate through all requested titles
-        for title in titles_to_track:
+        for title in titles:
             if summary and title in summary:
                 start_time = event.get('DTSTART').dt
                 end_time = event.get('DTEND').dt
 
                 event_duration = (end_time - start_time).total_seconds() / 3600
-                total_hours_by_title[title] += event_duration
+                total_hours[title] += event_duration
 
-    return total_hours_by_title
+    return total_hours
+
+def calculate_hours_files(files, titles):
+    total_hours = {title: 0 for title in titles} # placeholder dictionary
+
+    # iterate through all files
+    for file in files:
+        ical_data = file.read()
+        total_hours_file = calculate_hours(ical_data, titles) # calculate hours for current file
+
+        # update total hours for each title
+        for title, hours in total_hours_file.items():
+            total_hours[title] += hours
+
+    return total_hours
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
     if request.method == 'POST':
+        files = request.files.getlist('ical_files') # get files
+        titles = [item.strip() for item in request.form.get('titles').split(',')] # get requested titles
 
-        uploaded_file = request.files['ical_file'] # get the calendar file
-        titles_to_track = [item.strip() for item in request.form.get('titles').split(',')] # get requested titles as list
-
-        if uploaded_file:
-            ical_data = uploaded_file.read()
-            total_hours_by_title = calculate_total_hours(ical_data, titles_to_track) # calculate total hours for each title
-
-            return render_template('result.html', total_hours_by_title=total_hours_by_title)
+        if files:
+            total_hours = calculate_hours_files(files, titles)
+            return render_template('result.html', data=total_hours)
 
     return render_template('index.html')
 
