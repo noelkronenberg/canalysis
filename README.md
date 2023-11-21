@@ -1,4 +1,3 @@
-
 # Canalysis
 Calendar analytics via ICS files.
 
@@ -9,4 +8,4 @@ Calendar analytics via ICS files.
 3. type the title elements that you would like to track (seperated with commas)
 4. submit to view total hours for each title element
 
-https://github.com/noelkronenberg/canalysis/assets/79874249/72cb76d4-0b42-4a29-a195-82f60462d189
+https://github.com/noelkronenberg/canalysis/assets/79874249/328cf30c-3df0-434f-8c80-11fbbc3ec966
