@@ -1,55 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
-    <title>Canalysis</title>
-</head>
-<body>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+        <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.png') }}">
+        <title>Canalysis</title>
+    </head>
+    <body>
 
-    <div class="wrapper">
-    
-        <h1>Canalysis</h1>
+        <div class="wrapper">
+        
+            <h1>Canalysis</h1>
 
-        <div class="container">
-            <form method="post" enctype="multipart/form-data">
-                <label for="ical_files" class="file-input" id="fileInputLabel">
-                    <span>Upload files</span>
-                    <input type="file" name="ical_files" id="ical_files" accept=".ics" multiple style="display: none;" onchange="displayFileNames(this)" required>
-                </label>
-            
-                <label for="titles" class="text-input">Enter titles to track (separate with commas):</label>
-                <input type="text" name="titles" required>
-            
-                <input type="submit" value="Submit">
-            </form>
+            <div class="container">
+                <form method="post" enctype="multipart/form-data">
+                    <label for="ical_files" class="file-input" id="fileInputLabel">
+                        <span>Upload files</span>
+                        <input type="file" name="ical_files" id="ical_files" accept=".ics" multiple style="display: none;" onchange="displayFileNames(this)" required>
+                    </label>
+                
+                    <label for="titles" class="text-input">Enter titles to track (separate with commas):</label>
+                    <input type="text" name="titles" required>
+                
+                    <input type="submit" value="Submit">
+                </form>
+            </div>
+
+            <p class="notice"><a href="https://github.com/noelkronenberg/canalysis/tree/main#readme" target="_blank">Instructions and Demo</a></p>
+
         </div>
 
-        <p class="notice"><a href="https://github.com/noelkronenberg/canalysis/tree/main#readme" target="_blank">Instructions and Demo</a></p>
-
-    </div>
-
-    <script>
-        function displayFileName(input) {
-            const label = document.getElementById('fileInputLabel').querySelector('span');
-            if (input.files.length > 0) {
-                label.textContent = input.files[0].name;
-            } else {
-                label.textContent = 'Upload a file';
+        <script>
+            function displayFileNames(input) {
+                const label = document.getElementById('fileInputLabel').querySelector('span');
+                if (input.files.length > 0) {
+                    const fileNames = Array.from(input.files).map(file => file.name).join(', ');
+                    label.textContent = fileNames;
+                } else {
+                    label.textContent = 'Upload files';
+                }
             }
-        }
+        </script>
 
-        function displayFileNames(input) {
-        const label = document.getElementById('fileInputLabel').querySelector('span');
-        if (input.files.length > 0) {
-            const fileNames = Array.from(input.files).map(file => file.name).join(', ');
-            label.textContent = fileNames;
-        } else {
-            label.textContent = 'Upload files';
-        }
-    }
-    </script>
-
-</body>
+    </body>
 </html>
