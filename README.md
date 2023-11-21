@@ -2,7 +2,7 @@
 # Canalysis
 Calendar analytics via ICS files.
 
-## Demo
+## Instructions
 
 1. export your calendars as ICS files
 2. upload them to [Canalysis](https://canalysis.pythonanywhere.com/) (multiple files are possible)
