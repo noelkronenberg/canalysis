@@ -18,13 +18,24 @@ body {
     flex-direction: column;
 }
 
+.wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    flex-direction: column;
+    }
+
 .container {
     background-color: #fff;
     border-radius: var(--border-radius-2);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 10px 30px 20px 30px;
+    padding: 20px;
     text-align: left;
     max-width: 400px;
+    min-width: 400px;
     width: 100%;
 }
 
@@ -67,6 +78,7 @@ input[type="file"] {
 input[type="text"] {
     border-radius: var(--border-radius-3);
     border: 1px solid #ccc;
+    margin-bottom: 15px;
 }
 
 input[type="submit"] {
@@ -81,7 +93,6 @@ input[type="text"],
 input[type="submit"] {
     width: 100%;
     padding: 10px;
-    margin-bottom: 15px;
     box-sizing: border-box;
 }
 
@@ -107,6 +118,7 @@ span.hours {
 @media only screen and (max-width: 600px) {
     .container {
         max-width: 80%;
-        margin: 0px 20px;
+        min-width: 80%;
+        margin: 25px 25px;
     }
 }

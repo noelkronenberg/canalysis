@@ -7,11 +7,18 @@
         <title>Canalysis</title>
     </head>
     <body>
-        <div class="container">
-        <h1>Results</h1>
-        {% for title, hours in data.items() %}
-            <p><span class="title">{{ title }}</span> <span class="hours">{{ hours }} hours</span></p>
-        {% endfor %}
+
+        <div class="wrapper">
+
+            <h1>Results</h1>
+
+            <div class="container">
+                {% for title, hours in data.items() %}
+                    <p><span class="title">{{ title }}</span> <span class="hours">{{ hours }} hours</span></p>
+                {% endfor %}
+            </div>
+
         </div>
+
     </body>
 </html>

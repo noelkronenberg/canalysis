@@ -7,24 +7,28 @@
     <title>Canalysis</title>
 </head>
 <body>
+
+    <div class="wrapper">
     
-    <div class="container">
         <h1>Canalysis</h1>
 
-        <form method="post" enctype="multipart/form-data">
-            <label for="ical_files" class="file-input" id="fileInputLabel">
-                <span>Upload files</span>
-                <input type="file" name="ical_files" id="ical_files" accept=".ics" multiple style="display: none;" onchange="displayFileNames(this)" required>
-            </label>
-        
-            <label for="titles" class="text-input">Enter titles to track (separate with commas):</label>
-            <input type="text" name="titles" required>
-        
-            <input type="submit" value="Submit">
-        </form>
-    </div>
+        <div class="container">
+            <form method="post" enctype="multipart/form-data">
+                <label for="ical_files" class="file-input" id="fileInputLabel">
+                    <span>Upload files</span>
+                    <input type="file" name="ical_files" id="ical_files" accept=".ics" multiple style="display: none;" onchange="displayFileNames(this)" required>
+                </label>
+            
+                <label for="titles" class="text-input">Enter titles to track (separate with commas):</label>
+                <input type="text" name="titles" required>
+            
+                <input type="submit" value="Submit">
+            </form>
+        </div>
 
-    <p class="notice"><a href="https://github.com/noelkronenberg/canalysis/tree/main#readme" target="_blank">Instructions and Demo</a></p>
+        <p class="notice"><a href="https://github.com/noelkronenberg/canalysis/tree/main#readme" target="_blank">Instructions and Demo</a></p>
+
+    </div>
 
     <script>
         function displayFileName(input) {
