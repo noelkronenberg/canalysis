@@ -20,8 +20,16 @@
                         <input type="file" name="ical_files" id="ical_files" accept=".ics" multiple style="display: none;" onchange="displayFileNames(this)" required>
                     </label>
                 
-                    <label for="titles" class="text-input">Enter titles to track (separate with commas):</label>
-                    <input type="text" name="titles" required>
+                    <div>
+                        <label for="titles" class="text-input">Titles to track (separated with commas):</label>
+                        <input type="text" name="titles" required>
+                    </div>
+
+                    <div>
+                        <label for="from" class="date-input">Time frame:</label>
+                        <input type="date" name="from" placeholder="YYYY-MM-DD" required>
+                        <input type="date" name="to" placeholder="YYYY-MM-DD" required>
+                    </div>
                 
                     <input type="submit" value="Submit">
                 </form>
