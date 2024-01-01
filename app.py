@@ -38,8 +38,9 @@ def index():
         from_date = request.form['from'] # get start date
         to_date = request.form['to'] # get end date
         total_hours = calculate_hours_files(files, titles, (from_date, to_date))
-        total_hours = {k: round(v,2) for k, v in total_hours.items()} # round hours
-        return render_template('result.html', data=total_hours)
+        rounded_hours = {k: round(v,2) for k, v in total_hours.items()} # round hours
+        sorted_hours = dict(sorted(rounded_hours.items(), key=lambda item: item[1], reverse=True))
+        return render_template('result.html', data=sorted_hours)
     return render_template('index.html')
 
 if __name__ == '__main__':
