@@ -71,6 +71,10 @@ label.file-input {
     cursor: pointer;
 }
 
+#fileInputLabel {
+    word-break: break-all;
+}
+
 form {
     display: flex;
     flex-direction: column;
@@ -114,15 +118,31 @@ span.title, span.hours {
     padding: 4px 8px;
 }
 
-span.title {
-    border-radius: var(--border-radius-3);
-    background-color: var(--color-2);
+span.title, span.hours {
+    border-radius: 99px;
+    border: var(--border-1);
 }
 
-span.hours {
-    border-radius: 99px;
+.chart-container {
+    position: relative;
+    width: 100%;
+    margin-bottom: 35px;
+}
+
+.container .chart-container:last-child, .container .chart-container p:last-child {
+    margin-bottom: 0px !important;
+}
+
+.bar {
     background-color: var(--color-1);
-    color: #fff;
+    margin-bottom: 5px;
+    height: 25px;
+    transition: width 0.5s ease;
+    border-radius: 99px;
+}
+
+.bar-desc {
+    margin-top: 15px;
 }
 
 @media only screen and (max-width: 600px) {

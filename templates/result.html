@@ -15,11 +15,33 @@
 
             <div class="container">
                 {% for title, hours in data.items() %}
-                    <p><span class="title">{{ title }}</span> <span class="hours">{{ hours }} hours</span></p>
+                <div class="chart-container">
+                    <div class="bar" style="width: {{ hours }}%;"></div>
+                    <p class="bar-desc"><span class="hours">{{ hours }} hours</span> <span class="title">{{ title }}</span></p>
+                </div>
                 {% endfor %}
             </div>
 
         </div>
+
+        <script>
+            // update bar widths dynamically
+            document.addEventListener("DOMContentLoaded", function() {
+                var bars = document.querySelectorAll(".bar");
+
+                // total percentage
+                var totalPercentage = 0;
+                bars.forEach(function(bar) {
+                    totalPercentage += parseFloat(bar.style.width);
+                });
+
+                // adjust each bar width
+                bars.forEach(function(bar) {
+                    var percentage = (parseFloat(bar.style.width) / totalPercentage) * 100;
+                    bar.style.width = percentage + "%";
+                });
+            });
+        </script>
 
     </body>
 </html>
