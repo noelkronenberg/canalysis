@@ -129,8 +129,16 @@ span.title, span.hours {
     margin-bottom: 35px;
 }
 
-.container .chart-container:last-child, .container .chart-container p:last-child {
+.container .chart-container:last-child {
     margin-bottom: 0px !important;
+}
+
+.container .chart-container p:first-child {
+    margin-top: 5px;
+}
+
+.container .chart-container p:last-child {
+    margin-bottom: 5px;
 }
 
 .bar {
