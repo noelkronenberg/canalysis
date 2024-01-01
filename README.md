@@ -11,6 +11,6 @@ Calendar analytics via ICS files.
 
 ## Demo
 
-![cal](https://github.com/noelkronenberg/canalysis/assets/79874249/1488359b-117c-4d69-b675-5fc1c5915e89)
+![cal](https://github.com/noelkronenberg/canalysis/assets/79874249/f2812186-8d7a-4359-86f9-d4dd9f3ef6d2)
 ![input](https://github.com/noelkronenberg/canalysis/assets/79874249/b3752745-5b57-4fce-ae1f-6a1deb8bb731)
 ![output](https://github.com/noelkronenberg/canalysis/assets/79874249/36f82fc2-2ea5-43a2-9a9e-cc547df06589)
