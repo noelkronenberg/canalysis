@@ -21,8 +21,8 @@
                     </label>
                 
                     <div>
-                        <label for="titles" class="text-input">Titles to track (separated with commas):</label>
-                        <input type="text" name="titles" required>
+                        <label for="titles" class="text-input">Titles to track:</label>
+                        <input type="text" name="titles" placeholder="Lecture, Call, Lunch" required>
                     </div>
 
                     <div>
@@ -40,6 +40,7 @@
         </div>
 
         <script>
+            // file upload button
             function displayFileNames(input) {
                 const label = document.getElementById('fileInputLabel').querySelector('span');
                 if (input.files.length > 0) {
@@ -49,6 +50,14 @@
                     label.textContent = 'Upload files';
                 }
             }
+
+            // default time frame
+            const today = new Date().toISOString().split('T')[0];
+            const oneWeekBefore = new Date();
+            oneWeekBefore.setDate(oneWeekBefore.getDate() - 7);
+            const oneWeekBeforeFormatted = oneWeekBefore.toISOString().split('T')[0];
+            document.querySelector('input[name="from"]').value = oneWeekBeforeFormatted;
+            document.querySelector('input[name="to"]').value = today;
         </script>
 
     </body>
