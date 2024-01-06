@@ -21,7 +21,7 @@ def calculate_hours(ical_data, titles, time_frame):
                 total_hours[title] += (end_time - start_time).total_seconds() / 3600 # calculate and assign duration to title
     return total_hours
 
-def calculate_hours_files(files, titles, time_frame):
+def iterate_files(files, titles, time_frame):
     total_hours = {title: 0 for title in titles} # placeholder dictionary
     # iterate through all files
     for file in files:
@@ -37,9 +37,9 @@ def index():
         titles = [item.strip() for item in request.form.get('titles').split(',')] # get requested titles
         from_date = request.form['from'] # get start date
         to_date = request.form['to'] # get end date
-        total_hours = calculate_hours_files(files, titles, (from_date, to_date))
+        total_hours = iterate_files(files, titles, (from_date, to_date))
         rounded_hours = {k: round(v,2) for k, v in total_hours.items()} # round hours
-        sorted_hours = dict(sorted(rounded_hours.items(), key=lambda item: item[1], reverse=True))
+        sorted_hours = dict(sorted(rounded_hours.items(), key=lambda item: item[1], reverse=True)) # sort by hours
         return render_template('result.html', data=sorted_hours)
     return render_template('index.html')
 
