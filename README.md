@@ -3,11 +3,11 @@ Calendar analytics via ICS files.
 
 ## Instructions
 
-1. export your calendars as ICS files
+1. export your calendars as ICS files (e.g. [Google Calendar](https://support.google.com/calendar/answer/37111?hl=en), [Apple Calendar](https://support.apple.com/en-gb/guide/calendar/icl1023/mac))
 2. upload them to [Canalysis](https://canalysis.pythonanywhere.com/) (multiple files are possible)
-3. type the title elements that you would like to track (seperated with commas)
-4. select the time frame
-5. submit to view total hours for each title element
+3. enter the title elements that you would like to track (seperated with commas)
+4. select the desired time frame
+5. submit to view total hours for each (title) element
 
 ## Demo
 
