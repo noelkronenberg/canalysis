@@ -40,6 +40,19 @@ body {
     background-color: var(--color-4);
 }
 
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-image: radial-gradient(circle at center center, var(--color-3), var(--color-4)), repeating-radial-gradient(circle at center center, var(--color-3), var(--color-3), 100px, transparent 100px, transparent 10px); /* reference: https://www.magicpattern.design/tools/css-backgrounds */
+    background-blend-mode: multiply;
+    opacity: 0.05;
+    z-index: -1 !important;
+}
+
 /* START: Typograpghy */
 
 h1, h2, h3, a, p {
