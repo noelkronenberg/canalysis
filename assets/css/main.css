@@ -189,7 +189,7 @@ footer .content {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: flex-start;
+    align-items: center;
     max-width: 800px;
     margin-left: auto;
     margin-right: auto;
