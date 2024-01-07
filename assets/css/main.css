@@ -66,6 +66,10 @@ h3, a, p {
     line-height: var(--line-height-2);
 }
 
+a:hover {
+    text-decoration: none;
+}
+
 /* END: Typograpghy */
 
 /* START: Layout */
