@@ -81,6 +81,10 @@ form {
     gap: 20px;
 }
 
+span.title, span.hours {
+    line-height: 2;
+}
+
 input[type="file"] {
     display: none;
 }
@@ -150,7 +154,7 @@ span.title, span.hours {
 }
 
 .bar-desc {
-    margin-top: 15px;
+    margin-top: 8px;
 }
 
 @media only screen and (max-width: 600px) {
