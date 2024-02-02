@@ -58,6 +58,7 @@ label {
 
 input, p, label {
     font-size: 18px;
+    font-family: inherit;
 }
 
 label.file-input {
