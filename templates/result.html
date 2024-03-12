@@ -24,6 +24,18 @@
                 {% endfor %}
             </div>
 
+            {% if locations %}
+
+            <div class="container">
+                <ul class="location-container">
+                    {% for location in locations %}
+                        <li class="location">{{ location }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+
+            {% endif %}
+
         </div>
 
         <script>
